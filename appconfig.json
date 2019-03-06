@@ -1,0 +1,12 @@
+{
+	"DEVICES":{
+		"SGRFID": {"mode":"SerialPort","dev":"/dev/ttyO1", "speed":115200},
+		"PLC": {"mode":"SockClient","ip":"10.10.80.11","port":9600},
+		"MAC01": {"mode":"SockClient","ip":"10.10.80.11","port":8011}
+	},
+	"CMDROUTE":{
+		"READ": {"from":"PLC", "to":["SGRFID"], "reply":"PLC"},
+		"WRITE": {"from":"PLC", "to":["SGRFID"], "reply":"PLC"},
+		"TEST01":{"from":"PLC", "to":["MAC01"], "reply":"PLC_MAC01"}
+	}
+}
